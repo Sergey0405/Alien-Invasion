@@ -9,16 +9,15 @@ def check_events(ship):
             sys.exit()
         elif event.type == pg.KEYDOWN:
             if event.key == pg.K_RIGHT:
-                ship.rect.centerx += 1
-        #         # ship.moving_rigth == True
-        #     elif event.key == pg.K_LEFT:
-        #         ship.moving_left == True
-        # elif event.type == pg.KEYUP:
-        #     if event.key == pg.K_RIGHT:
-        #     # Переместить корабль вправо.
-        #         ship.moving_rigth == False
-        #     elif event.key == pg.K_LEFT:
-        #         ship.moving_left == False
+                ship.moving_rigth = True
+            elif event.key == pg.K_LEFT:
+                ship.moving_left = True
+        elif event.type == pg.KEYUP:
+            if event.key == pg.K_RIGHT:
+            # Переместить корабль вправо.
+                ship.moving_rigth = False
+            elif event.key == pg.K_LEFT:
+                ship.moving_left = False
 
 
 def update_screen(ai_settings, screen, ship):
